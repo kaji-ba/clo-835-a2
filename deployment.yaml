@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clo835-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: clo835-app
+  template:
+    metadata:
+      labels:
+        app: clo835-app
+    spec:
+      containers:
+      - name: clo835-app
+        image: kajibaa/assignment2:v01
+        ports:
+        - containerPort: 3030
